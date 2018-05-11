@@ -83,12 +83,10 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
-        <!--SpringBoot热部署-->
+        <!--SpringBootAop-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-           <!-- <version>RELEASE</version>-->
-            <optional>true</optional>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
 
@@ -99,7 +97,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
             </plugin>
+
+
         </plugins>
     </build>
 

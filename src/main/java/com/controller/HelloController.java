@@ -47,4 +47,12 @@ public class HelloController {
         System.out.println(bindingResult.getFieldError().getDefaultMessage());
         return s.toString();
     }
+
+    /**
+     * 热部署测试
+     */
+    @GetMapping(value = "/rbs")
+    public String getone(){
+        return "热部署测试成功";
+    }
 }
