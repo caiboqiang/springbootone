@@ -10,7 +10,7 @@
 
     <name>springbootone</name>
     <description>Demo project for Spring Boot</description>
-    <!--sringboot-->
+    <!--SpringBoot-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -82,6 +82,13 @@
             <artifactId>kotlin-test</artifactId>
             <version>${kotlin.version}</version>
             <scope>test</scope>
+        </dependency>
+        <!--SpringBoot热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+           <!-- <version>RELEASE</version>-->
+            <optional>true</optional>
         </dependency>
 
 
