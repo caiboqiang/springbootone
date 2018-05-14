@@ -11,6 +11,13 @@ public class HelpCategoryService {
 
     @Autowired
     private HelpCategoryMapper helpCategoryMapper;
+
+
+    /**
+     * @Transactional 事物注解
+     * 一般用在也用层
+     *当其中一个不成功就回滚
+     */
     @Transactional//事物 当其中一个不成功就回滚
     public HelpCategory getId(Short helpCategoryId){
 
