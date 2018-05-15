@@ -1,5 +1,7 @@
 package com.controller;
 
+import com.common.base.MessageBox;
+import com.common.base.code.sys;
 import com.pojo.stu;
 import com.service.HelpCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +56,22 @@ public class HelloController {
     @GetMapping(value = "/rbs")
     public String getone(){
         return "热部署测试成功";
+    }
+
+    /**
+     * 标准返回方式
+     * @param s
+     * @param bindingResult
+     * @return
+     */
+    @RequestMapping(value = "/putErr")
+    public Object putStuErr(@Valid stu s, BindingResult bindingResult){
+        //错误信息
+        if(bindingResult.hasErrors()){
+            return MessageBox.build(sys.ERR.getCode(),bindingResult.getFieldError().getDefaultMessage()) ;
+        }else {
+            return MessageBox.build(sys.CORRECT.getCode(),sys.CORRECT.getMessage(),s.toString());
+        }
+
     }
 }
