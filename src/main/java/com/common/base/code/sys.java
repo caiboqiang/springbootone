@@ -5,7 +5,7 @@ package com.common.base.code;
  */
 public enum sys {
 
-    CORRECT("100","正确"),ERR("101","数据类型错误"),;
+    CORRECT("100","SUCCESS"),ERR("101","数据类型错误"),;
 
     private String code;
 
