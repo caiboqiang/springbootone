@@ -16,7 +16,7 @@ public class HelpCategoryService {
 
     /**
      * @Transactional 事物注解
-     * 一般用在也用层
+     * 一般用在也用业务层
      *当其中一个不成功就回滚
      */
     @Transactional//事物 当其中一个不成功就回滚
@@ -41,5 +41,16 @@ public class HelpCategoryService {
             throw new helloException("你还上搞中","102");
         }
         throw new Exception("未知错误请联系管理员");
+    }
+
+    /**
+     * 单元测试 demo
+     * @param helpCategoryId
+     * @return
+     */
+    public HelpCategory getIdTest(Short helpCategoryId){
+
+        return helpCategoryMapper.selectByPrimaryKey(helpCategoryId);
+
     }
 }
