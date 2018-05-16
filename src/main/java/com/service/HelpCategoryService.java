@@ -1,5 +1,6 @@
 package com.service;
 
+import com.common.err.helloException;
 import com.mapper.HelpCategoryMapper;
 import com.pojo.HelpCategory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,22 @@ public class HelpCategoryService {
 
         return helpCategoryMapper.selectByPrimaryKey(helpCategoryId);
 
+    }
+
+
+    /**
+     * 业务处理方法 抛异常
+     */
+    public void getAge(Integer age) throws Exception{
+        if(age<10){
+            throw new Exception("还在上小学把");
+        }
+        if(age>11 && age<15){
+            throw new helloException("你还上初中","101");
+        }
+        if(age>12 && age<18){
+            throw new helloException("你还上搞中","102");
+        }
+        throw new Exception("未知错误请联系管理员");
     }
 }

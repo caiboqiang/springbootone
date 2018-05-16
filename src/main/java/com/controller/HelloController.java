@@ -43,7 +43,7 @@ public class HelloController {
      */
    // @PostMapping
     @RequestMapping(value = "/put")
-    public String putStu(@Valid stu s, BindingResult bindingResult){
+    public String putStu(stu s, BindingResult bindingResult){
         //错误信息
         bindingResult.getFieldError().getDefaultMessage();
         System.out.println(bindingResult.getFieldError().getDefaultMessage());
@@ -54,7 +54,7 @@ public class HelloController {
      * 热部署测试
      */
     @GetMapping(value = "/rbs")
-    public String getone(){
+    public String getOne(){
         return "热部署测试成功";
     }
 
@@ -65,7 +65,7 @@ public class HelloController {
      * @return
      */
     @RequestMapping(value = "/putErr")
-    public Object putStuErr(@Valid stu s, BindingResult bindingResult){
+    public MessageBox putStuErr(@Valid stu s, BindingResult bindingResult){
         //错误信息
         if(bindingResult.hasErrors()){
             return MessageBox.build(sys.ERR.getCode(),bindingResult.getFieldError().getDefaultMessage()) ;
@@ -73,5 +73,17 @@ public class HelloController {
             return MessageBox.build(sys.CORRECT.getCode(),sys.CORRECT.getMessage(),s.toString());
         }
 
+    }
+
+    /**
+     * 抛异常处理
+     * @param age
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/getErr/{age}")
+    public MessageBox handle(@PathVariable("age") int age) throws Exception{
+        helpCategoryService.getAge(age);
+        return MessageBox.build(sys.CORRECT.getCode(),sys.CORRECT.getMessage());
     }
 }
