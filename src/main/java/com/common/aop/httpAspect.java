@@ -30,7 +30,7 @@ private Logger logger =LoggerFactory.getLogger(httpAspect.class);
     //请求前通知
     @Before("http()")
     public void httpBefore(JoinPoint joinPoint){
-        ServletRequestAttributes requestAttributes = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
+        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest servletRequest = (HttpServletRequest)requestAttributes.getRequest();
         //url
          servletRequest.getRequestURL();

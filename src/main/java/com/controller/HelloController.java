@@ -2,8 +2,11 @@ package com.controller;
 
 import com.common.base.MessageBox;
 import com.common.base.code.sys;
+import com.common.redis.redisService;
 import com.pojo.stu;
 import com.service.HelpCategoryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -15,15 +18,20 @@ import javax.validation.Valid;
  */
 @RestController
 public class HelloController {
-
+    private static Logger logger = LoggerFactory.getLogger(HelloController.class);
     @Autowired
     private HelpCategoryService helpCategoryService;
+    @Autowired
+    private redisService redis;
 
     @GetMapping(value = "/get")
     public String get(){
         java.lang.Short i = 1;
         helpCategoryService.getId(i).toString();
         System.out.println(helpCategoryService.getId(i).toString());
+        //redis
+        redis.set("cai",helpCategoryService.getId(i).toString());
+        logger.info("===测试redis==={}",redis.get("cai"));
         return  helpCategoryService.getId(i).toString();
     }
 
