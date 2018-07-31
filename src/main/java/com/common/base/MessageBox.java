@@ -5,7 +5,6 @@ import java.io.Serializable;
 /**
  * <p>
  * Description:消息返回对象<br />
- * 不好
  * </p>
  * 
  * @title MessageBox.java
