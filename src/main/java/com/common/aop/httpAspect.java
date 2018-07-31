@@ -46,6 +46,7 @@ private Logger logger =LoggerFactory.getLogger(httpAspect.class);
         joinPoint.getArgs();
         logger.info("==拦截成功=={}",servletRequest.getRequestURL());
         //System.out.println("拦截成功");
+
     }
 
     //请求后通知

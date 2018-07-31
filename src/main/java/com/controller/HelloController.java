@@ -12,6 +12,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 控制器创建
@@ -25,14 +27,24 @@ public class HelloController {
     private redisService redis;
 
     @GetMapping(value = "/get")
-    public String get(){
+    public MessageBox get(){
         java.lang.Short i = 1;
         helpCategoryService.getId(i).toString();
         System.out.println(helpCategoryService.getId(i).toString());
         //redis
         redis.set("cai",helpCategoryService.getId(i).toString());
         logger.info("===测试redis==={}",redis.get("cai"));
-        return  helpCategoryService.getId(i).toString();
+
+        List listStu = new ArrayList<stu>();
+        for (int h=0;h<5;h++){
+                stu  stu = new stu();
+            stu.setAge(h);
+            stu.setId(h);
+            stu.setName("h"+h);
+            listStu.add(stu);
+        }
+        //return  helpCategoryService.getId(i).toString();
+        return MessageBox.build(sys.CORRECT.getCode(),sys.CORRECT.getMessage(),listStu);
     }
 
     @RequestMapping(value = "/getid/{id}/{name}")//@RequestParam(value = "id",required = false, defaultValue = "0")
