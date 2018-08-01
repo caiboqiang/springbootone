@@ -16,7 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 控制器创建
+ * HelloController class
+ * Demo案例功能测试
+ * @author CBQ
+ * @date 2018/07/31
  */
 @RestController
 public class HelloController {

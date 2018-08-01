@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- <properties resource="conn.properties" /> -->
+    <!-- 处理1，这里的jar包位置可能需要修改 -->
+    <classPathEntry location="D:\apache-maven-3.3.9\repository\\mysql\mysql-connector-java\5.1.21\mysql-connector-java-5.1.21.jar"/>
+    <!-- 指定运行环境是mybatis3的版本 -->
+    <context id="testTables" targetRuntime="MyBatis3">
+
+        <commentGenerator>
+            <!-- 是否取消注释 -->
+            <property name="suppressAllComments" value="true" />
+            <!-- 是否生成注释代时间戳 -->
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+        <!-- 处理2 jdbc 连接信息，看看库是否存在 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://hadoop2:3306/springbootone?useUnicode=true&amp;characterEncoding=UTF-8" userId="root" password="root">
+        </jdbcConnection>
+
+        <!--处理3 targetPackage指定模型在生成在哪个包 ,targetProject指定项目的src,-->
+        <javaModelGenerator targetPackage="com.pojo.shrio_module" targetProject="src/main/java">
+            <!-- 去除字段前后空格 -->
+            <property name="trimStrings" value="false" />
+        </javaModelGenerator>
+        <!--处理4 配置SQL映射文件生成信息 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
+        <!-- 处理5 配置dao接口生成信息-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mapper" targetProject="src/main/java" />
+
+        <!--<table schema="" tableName="user" enableCountByExample="false" enableSelectByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
+        </table>-->
+        <table tableName="user" domainObjectName="User"/>
+    </context>
+</generatorConfiguration>

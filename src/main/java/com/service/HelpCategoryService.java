@@ -19,7 +19,8 @@ public class HelpCategoryService {
      * 一般用在也用业务层
      *当其中一个不成功就回滚
      */
-    @Transactional//事物 当其中一个不成功就回滚
+    //事物 当其中一个不成功就回滚
+    @Transactional
     public HelpCategory getId(Short helpCategoryId){
 
         return helpCategoryMapper.selectByPrimaryKey(helpCategoryId);
