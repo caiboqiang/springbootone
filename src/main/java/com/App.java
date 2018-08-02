@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 //扫描mapper接口
 @MapperScan(basePackages = {"com.mapper"})
-
+//扫描注解
 //@ComponentScan(basePackages = {"com.*"})
 @Slf4j
 public class App {

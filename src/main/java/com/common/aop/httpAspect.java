@@ -19,7 +19,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * execution(public * com.controller.*.*(..))
  */
 @Aspect
-@Component //吧文件引入到spring容器中
+@Component //把文件引入到spring容器中
 public class httpAspect {
 private Logger logger =LoggerFactory.getLogger(httpAspect.class);
     //提取重复的拦截代码(公用方法)

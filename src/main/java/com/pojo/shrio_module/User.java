@@ -2,7 +2,12 @@ package com.pojo.shrio_module;
 
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * Role class
+ * 用户
+ * @author CBQ
+ * @date 2018/08/01
+ */
 public class User {
     private String uid;
 
