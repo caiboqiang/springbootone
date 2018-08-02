@@ -19,14 +19,14 @@
         </jdbcConnection>
 
         <!--处理3 targetPackage指定模型在生成在哪个包 ,targetProject指定项目的src,-->
-        <javaModelGenerator targetPackage="com.pojo.shrio_module" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="generate.com.pojo." targetProject="src/main/java">
             <!-- 去除字段前后空格 -->
             <property name="trimStrings" value="false" />
         </javaModelGenerator>
         <!--处理4 配置SQL映射文件生成信息 -->
-        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
+        <sqlMapGenerator targetPackage="generate.com.mapper" targetProject="src/main/java" />
         <!-- 处理5 配置dao接口生成信息-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mapper" targetProject="src/main/java" />
+        <javaClientGenerator type="XMLMAPPER" targetPackage="generate.com.mapper" targetProject="src/main/java" />
 
         <!--<table schema="" tableName="user" enableCountByExample="false" enableSelectByExample="false"
                enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >

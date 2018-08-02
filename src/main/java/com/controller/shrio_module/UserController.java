@@ -19,13 +19,19 @@ public class UserController {
     private UserService userService;
 
     /**
-     *
+     * 测试案例
      * @param name
      * @return
      */
     @GetMapping(value = "/getId/{name}")
     public MessageBox getName(@PathVariable("name") String name){
-        userService.getUser(name);
-        return MessageBox.build("200","ok",userService.getUser(name));
+        try {
+            userService.getUser(name);
+            return MessageBox.build("200","ok",userService.getUser(name));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return MessageBox.build("404","ok",e.toString());
+        }
+
     }
 }
