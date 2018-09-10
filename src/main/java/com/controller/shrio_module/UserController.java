@@ -26,12 +26,13 @@ public class UserController {
     @GetMapping(value = "/getId/{name}")
     public MessageBox getName(@PathVariable("name") String name){
         try {
-            userService.getUser(name);
-            return MessageBox.build("200","ok",userService.getUser(name));
+            //userService.getUser(name);
+            return MessageBox.build("200","ok","");
         } catch (Exception e) {
             e.printStackTrace();
             return MessageBox.build("404","ok",e.toString());
         }
 
     }
+
 }
