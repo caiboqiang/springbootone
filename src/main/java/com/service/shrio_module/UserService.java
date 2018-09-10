@@ -1,6 +1,6 @@
 package com.service.shrio_module;
 
-import com.mapper.shrio_module.UserMapper;
+//import com.mapper.shrio_module.UserMapper;
 import com.pojo.shrio_module.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +14,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    @Autowired
-    private UserMapper userMapper;
+   // @Autowired
+    //private UserMapper userMapper;
 
-    public User getUser(String name){
-      return   userMapper.findByUsername(name);
-    }
+    //public User getUser(String name){
+     // return   userMapper.findByUsername(name);
+   // }
 }
