@@ -16,6 +16,12 @@ object Def{
     //当方法没有返回值时候不需要写（）
     //println(Tdef)
     sayName()
+    //命名参数传递
+    add(b=10,x=20)
+    add(x=20,b=30)
+    //默认方式
+    add(10,20)
+    println(Bsum(1,2,14,59))
   }
 
   /**
@@ -42,4 +48,14 @@ object Def{
     println(name)
   }
 
+  /**
+    * 可变参数 用* 表示 求和
+    */
+  def Bsum(nums:Int*): Int ={
+     var re = 0
+    for (v <- nums){
+      re += v
+    }
+    re
+  }
 }
