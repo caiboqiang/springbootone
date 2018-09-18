@@ -6,7 +6,10 @@
     <groupId>com</groupId>
     <artifactId>springbootone</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>MR</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>springBootOne</name>
     <description>Demo project for Spring Boot</description>
@@ -25,6 +28,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <kotlin.version>1.2.31</kotlin.version>
+        <spark.version>2.3.0</spark.version>
     </properties>
 
     <dependencies>
@@ -32,9 +36,18 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>2.11.6</version>
+            <version>2.11.8</version>
         </dependency>
         <!--END-->
+
+        <!--Spark 引入Spark-core的依赖 BEGIN-->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <!--END-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

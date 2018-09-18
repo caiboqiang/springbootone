@@ -6,7 +6,7 @@ object test {
     /**
       * 定义常量
       */
-    var s = 5;
+    val s = 5;
     /**
       * 定义变量
       */
@@ -20,15 +20,20 @@ object test {
       9
     }
     println(x1);
+
+    // i 是输出值
+    for (i <- 1 to 100){
+     // println(i+"GGG")
+    }
+
+    for (i <- 1 to 3; j <- 1 to 3 if (i != j) ){
+      println(i*10+j)
+    }
   }
 
-  for (i <- 1 to 100){
-    //println(i)
-  }
 
-  for (i <- 1 to 3; j <- 1 to 3 if (i != j) ){
-    println(i*10+j)
-  }
+
+
 
   /**
     * 这种写法不可行
