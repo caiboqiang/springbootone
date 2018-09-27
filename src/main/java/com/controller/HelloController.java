@@ -3,13 +3,18 @@ package com.controller;
 import com.common.base.MessageBox;
 import com.common.base.code.sys;
 import com.common.redis.redisService;
+import com.pojo.UserApp;
 import com.pojo.stu;
 import com.service.HelpCategoryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -28,6 +33,8 @@ public class HelloController {
     private HelpCategoryService helpCategoryService;
     @Autowired
     private redisService redis;
+    @Autowired
+    private UserApp userApps;
 
     @GetMapping(value = "/get")
     public MessageBox get(){
@@ -37,7 +44,13 @@ public class HelloController {
         //redis
         redis.set("cai",helpCategoryService.getId(i).toString());
         logger.info("===测试redis==={}",redis.get("cai"));
-
+        //scala 类在java调用
+        UserApp userApp = new UserApp();
+        userApp.ages_$eq(666);
+        userApp.name_$eq("666666");
+        userApp.say(userApp.name());
+        //-----
+        userApps.id_$eq("");
         List listStu = new ArrayList<stu>();
         for (int h=0;h<5;h++){
                 stu  stu = new stu();

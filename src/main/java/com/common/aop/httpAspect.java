@@ -1,11 +1,11 @@
 package com.common.aop;
 
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.aspectj.lang.JoinPoint;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -22,6 +22,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Component //把文件引入到spring容器中
 public class httpAspect {
 private Logger logger =LoggerFactory.getLogger(httpAspect.class);
+
     //提取重复的拦截代码(公用方法)
     @Pointcut("execution(public * com.controller.HelloController.*(..))")
     public void http(){

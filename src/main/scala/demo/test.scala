@@ -3,6 +3,9 @@ package demo
 object test {
 
   def main(args: Array[String]): Unit = {
+
+
+    val bc = Array("d","l")
     /**
       * 定义常量
       */

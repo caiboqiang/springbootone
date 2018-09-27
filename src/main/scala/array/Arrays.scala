@@ -6,10 +6,16 @@ import scala.collection.mutable.ArrayBuffer
   * 数组
   */
 object Arrays extends App{
-val a = new ArrayClass
- val list = new listApp
-  println(list.l4)
+//val a = new ArrayClass
+ //val list = new listApp
+  //list.L.sum
+    println()
+  //println(list.l4)
+  //val s = 1+sum(list)
   //println(a.arrBuf.tail)
+
+  val se = new set()
+  println(se.sets)
 }
  class ArrayClass{
    //不可变数组
@@ -69,6 +75,15 @@ class listApp{
   val l2 = 2 :: l1 //2作为头 1作为尾部
   val l3 = l1 :: l2 :: Nil
   val l4 = 1 :: 2 :: 3 :: Nil
+  //返回的是个list
+  var li = l4.toList
+  //
+  var arry = l4.toArray
+  //判断集合是否为空
+  li.isEmpty
+}
 
+class set {
+  val sets = Set(3,5,2,2,8,1)
 }
 

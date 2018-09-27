@@ -1,0 +1,15 @@
+基本数据类型模式匹配
+Array模式匹配（数组）
+List模式匹配（集合）
+模式匹配通常要和Scala的异常处理一块使用掌握Scala异常处理
+Scala异常处理
+case calss 模式匹配
+Some&None模式匹配
+
+语法
+    变量 match{
+         case value1 => 代码1
+         case value2 => 代码2
+         case value3 => 代码3
+         .......
+    }
